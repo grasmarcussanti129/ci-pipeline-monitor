@@ -15,7 +15,10 @@ app.use(express.json());
 const mongoURI = 'mongodb://localhost:27017/cipipeline';
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected...'))
-  .catch(err => console.log(err));
+  .catch(err => {
+    console.error('MongoDB connection error:', err);
+    process.exit(1); // Exit process with failure
+  });
 
 // Sample route
 app.get('/', (req, res) => {
