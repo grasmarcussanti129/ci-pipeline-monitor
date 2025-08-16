@@ -8,8 +8,8 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-app.use(cors());
-app.use(express.json());
+app.use(cors()); // Enable CORS for all origins
+app.use(express.json()); // Parse incoming JSON requests
 
 // Your MongoDB connection URL and configuration
 const mongoURI = 'mongodb://localhost:27017/cipipeline';
@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
   res.send('CI Pipeline Monitor API');
 });
 
-// Socket.IO example event
+// Socket.IO event handling
 io.on('connection', (socket) => {
   console.log('New client connected');
   socket.on('disconnect', () => {
