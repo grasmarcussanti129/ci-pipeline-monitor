@@ -1,7 +1,7 @@
 {
   "name": "ci-pipeline-monitor",
   "version": "1.0.0",
-  "description": "A lightweight web application to visualize the status and performance metrics of CI/CD pipelines in real time.",
+  "description": "A lightweight web application for visualizing CI/CD pipeline status and performance metrics in real time.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
